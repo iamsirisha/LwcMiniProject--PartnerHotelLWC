@@ -1,0 +1,1570 @@
+
+----------------------------------------------------------
+
+
+
+
+https://apc01.safelinks.protection.outlook.com/ap/t-59584e83/?url=https%3A%2F%2Fteams.microsoft.com%2Fl%2Fmeetup-join%2F19%253ameeting_OTk5N2I5ODgtMzgxNy00MzFkLWJhNzUtNTBhMjcwMThkM2Jj%2540thread.v2%2F0%3Fcontext%3D%257b%2522Tid%2522%253a%2522189de737-c93a-4f5a-8b68-6f4ca9941912%2522%252c%2522Oid%2522%253a%252205d5fe4d-e6b2-489a-8f7c-0c69772885f3%2522%257d&data=04%7C01%7Cgudla.sirisharani%40hcl.com%7C1d61c35fcaf940d87c4e08da0e440a4b%7C189de737c93a4f5a8b686f4ca9941912%7C0%7C0%7C637837982644499955%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000&sdata=ROTvzFZZ0%2FnF4sP0Asze40NrX7U%2Ffg7x8tHN0pv3PTI%3D&reserved=0
+------------------------------------------------------------------
+
+--------------------------------------------------------------
+Salesforce Day 1 March 28
+
+Saleforce  .They started and acquired 1st as CRM 
+thereafter  it acquires (integrates)clouds marketing clouds, service clouds
+Marketing clouds
+Every business have 3 main teams ( sales service marketing)
+trailhead.salesforce.com -- used  to know about saleforce products
+Salesforce is a plain venilla product used to used and can customise the  things what we need
+-----------------------
+Login access policies is used to put the login button beside the User
+based on edition we nedd to pay(essentials 25$,professional 75$,enterprise 150$,unlimited 300$ ) per 1 user per month
+for 1 user we need to pay 150$  to 1 user per month
+-----------------------
+setup-> Storage Usage -> See how much is the data storgae file storage and big object storage(if > 70) need to take action
+
+---------------------------------------------------------------
+Day2 March 29
+----
+In  Global search we can search anything if we want to search user type user etc..m if not came select people dropdown then search for that user
+-----
+Sales team deals and  attracts the customers (Users)
+Primary Sales team uses the System
+Intend of Sales Team-- Bring more customers to your Organisation (More Deal with Customers)
+Sales Cloud  Team will quickly capture info abt customer . This Tool help tosales team done productive and fast 
+Sales team and Marketing Team and Customer Service also uses salesCloud application
+Sales Team(users-Profile)
+Marketing Team(Users-Profile)
+Customer Service(users-Profile)
+legal team(users-Profile)  -- like safeguaridng insurance   eg :icicibank property insured
+field Inspect team(users-Profile)-- same as legalteam
+---
+we will configure 1 profile for each team 
+Profile - Helps us to Group some Users
+
+We can create a profile (custom)  Maximum cases we use to Clone the Profile and give  Custom  word before the profile 
+ After cloning in profile customcheckbox enabled says its a custom profile
+if license or data storage breach  we need to pay money(project needs to pay)
+(Summer,Winter,Spring )-> 3 times in a  year  saleforcr will do product releases
+-----
+setup -> Release  Updates 
+Can we delete an user-> No 
+Soft delete an User-> 2 ways-> Freeze ,active 
+
+Make User inactive -> Soft Delete 
+We can't delet user as per GDPR (GLOBAL DATA POLICY ) y beacuse user had  a right to  know what info they store abt 
+
+If user is   inactive his license will get in unused licenses  
+Freeze will donot give acces and license consuming(if user forgot pwd)
+Inactive will donot give access and we can consume his/her license(if user left organisation)
+1.We can add any profile  to an app by app permission in app manager
+2.go to the profile and  and see the custom app permissions (any new apps)
+standard apps allow only sales profiles 
+create a nw proile leagal review request obj as autoname as default field 
+create a custom  obj and make tab visibility to the customsales ,custom legal .
+there make the tab visible to the selected app(legall)
+
+now open lightning legal app then  then add legal review requests in the  tab 
+ 
+Salesforce licnese -> Lifetime  (12 months)
+We can get th elist of active users by creating a new viw in users or  by creating a report 
+---------
+March 31
+If we want to categorise the data in reports use bucket field 
+ApExchnage is like a play store we can get the readily availbale functionlaity like ServiceNowConnec,Dashboard Connection etc,paid ones
+Anything backedn can be seen in Objcet Manager ->  fields etc..,
+------------------------------------------------
+April 4 session  
+customer --> (Account)
+to avoid bank rupt etcc.., we need legal team. for customer profiling like they are good and they can afford or not etcc,
+Legal team should be able to assess new customers and share outcome whether to do business or not
+Solution: 
+
+Create a new profile - DONE 
+Create a new app for legal - DONE 
+Ensure new app for legal is accessible only by legal and Sales team  - DONE 
+Create a placeholder in the org to manage all legal requests coming to legal team - DONE  
+----------------
+create an user srini with custom sale profile cloning standard platform /user profile
+thereafter  create one app give permissionto sys admin and custom  legal proile  and for not custom sales profile  and login as srini ad see whethere the legal app is visible to custom sales profile  chec
+now incude sales profile in lightening app 
+
+profile is used for managing access 
+Note:
+1.Whenever  a obj  is added assign  to a tab
+
+2.can summarise the record page  by creating a view with relevant  fields to be appeared on the record page 
+
+3.though configuration done in the  application  by adding custom sales profile and custom leagl team .custom sales profile members are not able to see the leag revie request  
+ At that time go to the  profile of custom sales team and add permission for custom  obj (leagal review request-> give permission as your wish read edit etc..,)  
+ Sales team  creates a request and legal  team  aligned and had made a look  (2 dep working together)  in this way 
+
+Note :
+Requirement - 
+UC #2: Legal team has a request to salesforce admin to remove activity component or section from the legal review request page.  
+
+Sales team has a request to sales admin to NOT TO remove activity component or section from the legal review request page 
+
+Solution: 
+
+Use page editor  
+
+Use profiles to handle visibility  
+legal team and sys admin can see the  the remaining activity  components in detail page 
+so click edit page -> (Set component visibility -> advanced-> filter type (user->profile-> Name   Operator -> contains -> sys admin )
+                      (Set component visibility -> advanced-> filter type (user->profile-> Name  Operator ->contains ->custom sales  team )
+Note:
+In a task if object level permisiion is given for profile in lightening app we can't see the tab so go to the profile give custom obj permsissions 					  
+-------------------------------------------
+Session 6  April 6 
+Salesforce as a product have  one mobile application (Saleforce1) login with org username and pwd 
+ 
+Data Relationships -> eg: gmail linkup(Master detail)
+
+	
+Relationships-> 
+Master detail 
+lookup
+self lookup 
+External				  
+Data Relationship 
+
+ 
+
+Master Detail or Parent Child  -> Closely or tightly coupled 
+When I delete a parent record all child records associated with that will get deleted 
+
+Lookup -> Loosely coupled 
+When I delete a parent record no impact to the child records  
+
+Self-relationship 
+
+External relationship (TODO) 
+
+If a user create some matser detail relationship records on an object then if user left the organisation  or deactived then whatevr records he created will  present   no matter he is inactive
+
+Detail page related list ->if we want configure whatever the records in the related list we can do our wish by pagelayout
+if we  want to do  that view  of certain fields  -need to do coding
+Pagelayout Explanation
+
+Component visibility -> diff for mobile o put it select the component and select form factor and select for device/desktop   
+Page Layout vs Lightning record page editor 
+
+When u want to deal with components hide or show …use record page editor 
+
+When u want to deal with field level changes under details tab or related sections …use record page layout 
+
+
+Self RelationShip eg:  Alphabet subsidaries of Alphabet are Google Inc Firebase etcc,
+ You can create hierachical record  by creating a lookup field in the same object 
+Create accnts for googleinc and firebase
+in that google inc and firebase  give parent accnt as Alphabet 
+Now see Hierarchy Alphabet by clicking Hierarichal vutton on compact layout beside account  -- 1.Google Inc 2.Firebase Inc 
+-----------------------------------------------------------------
+April 7 Session
+
+Quiz->
+1. We can  set the user block -> setup-> users-> Freeze
+2 Saleforce will free up the license when an user saccess is freezed-> false
+3. which among the  belwo options is mandatory when an user record is created ->  Profile ,Username,Email,                         
+4. U1 ,U2 ,u3 have same profile and have  read access on Case Object and Give Edit and del to U3   User then how we can achieve it-. BY Creating a permission set for U3 giving Edit and del acces
+5.How do you configure that user can accein salesforce like creating app and recordds,tab etc..,-> By Profile 
+
+Note:
+field level security-> Set fiedl level security set read /visible
+if visible -> profile have edit and read acces read-> only read acces for that field is there
+
+Note:
+if we can't chnage the field level security means that field is required so to set the field for filevel security .
+
+-----------------------------------
+April 8
+1. page layout-. to controo fields
+2.profile name  can only started  with the upper case -false
+3. 1 profile have only 1 page lyout
+4.the page layout is created when an object is create d by default
+
+Permission set -> you can  give additional access by permisssion se but we cannot revoke any acces by permsission set 
+To hide some data to cetain profile people -> use pagelayout i.e create different pagaelayous to different profile 
+permission set-> used to get access only but cannot revoke access 
+1 profie-> 1 pagelayout
+
+UC #1: Sales Team started complaining that they are seeing more information than what is really needed eg: external legal agency details 
+
+Solution:  
+Page layouts 
+Dynamic forms 
+Works only for custom objects* 
+Eg: customer service agents 
+Customer cases  
+Internal employee cases
+ 
+Dynamic forms can control more that pagelyout foruser also can control
+Dynamic forms-> always availbe and work on Custom Objects  not for stamdard objects 
+i.e can compartise section visiblibility to each user or each person  separately better that pagelyoyt 
+Dynamic forms->are used as page layouts to hide ceratins fields in a layout fo profile
+for that-> setup-> edit page-> 1st upgrade at the right side and  left side components section fields section drag the fields section in the left to the right  and add necessaryfields what you want for that profile and  slect compinent visibiity add filter->advanced->user->profile->leage or sales profiel    
+
+-------------------------------------------------------------------------------------------
+April 11-> marketing stuff
+
+Campaign->  ggogle ads,linkedin ,youtube ,advertisements and adds  -> Measure and manage
+Whoare paying mpre money they will appear top onthe screen while we searching the anything in google 
+Saleforce->best than other licenses 
+Salesforce platform license main entitled is used to assign custom objects s
+We need to know the constraints of each license salesforce and saleforce platform
+Saleforce wll provide base line access to all licenses 
+
+Note:
+For Campaign  Object Though have tab visibility and object,field  visibility for the campaign object  we need to enable Marketing User checkbox in the User 
+Salesforce platform license main entitled is used to assign custom objects s
+
+
+Data Loader or Data Import Wizard :
+
+Data Import Wizard : objects->   Account and contacts ,Leads ,Soloutions, Campaign Members and Custom Objects
+Data Import Wizard-> Not supports all Standard objcet and   no of records can load are 50k
+cannot be used for purge operation
+Note: To prevent the not occurrance of duplicate (we can use add and update existing and select match contact by(Salesforce.Com & Name and Site )
+Note: in data import wizard we can only use the existing configuration but not by choosing the requird fields
+after upload or insert error and succes isseen in 1 file succes as inserted and failure as fail and not in separate fails 
+
+DataLoader->  External app to be installed more advantage than  data import wizard 
+supports  purge and export
+can  insert 5M records by batches
+supports all custom objects 
+can supported  jobs to be scheduled
+
+-----------------------------------------------------------------------
+ 
+
+
+April 12 
+
+Quiz
+Which among the below  is used to import/export data -> DataLoader
+Say you want to load new contacts of 1 million which one will be used-> DataLoader
+Say you want purge(remove)  contact history records that are 15 years old which one will be userd-Dataloader
+As an admin if you have10k records of opportunity  to update  which onne will be used-> DataLoader
+As an admin would you export filea and attachment from your og-> Data Export wizard 
+
+Data sharing roles
+
+Remove that field as an required field
+
+ if we ant to make a field as required and tos et field level security for that field we have one option 
+ 1st  give the field level security for that field and to make it as required apply a validation rule for make that field as required 
+ 
+ession settings-> force settings checkbox uncheck it will wont aks to login again and aain so enable that in session settings force settings
+permissional sets-> To give addditional access other than by profiel we will go to the Permission sets
+  
+To setting a permission if i assign permsission to certain license we can assign the users who are assign to the users with that license
+we can create a permission set by selecting no license also 
+Validation Rule-> Throw the when the condition in the formula when created and edited also 
+Note :
+2 users have 2 different license can we assign the  same permission set to the 2 users-> Not possible 
+Therfore Permission set groups came into the picture  we  can do  it 
+we can add fields  not only by object manager but also by schema buildeer 
+
+Note:
+Remember Principle of Least Privilizes 
+Customer Survey-> 
+OWD Public Read/Write-> All users in the Org can  be ablle to see all records irrespective of who created 
+OWD :Private -> only   Record owners nly can see their own records which arre created by them
+Setup-> Backgound Jobs-. Can see any processing rule like sharing rule etc can see the progress as processing or Completed 
+When OWD set as Private  and if Grant Access using Hierarchy are checked then  Users with higher hierachy can see the records created by the lower hierachy user in the role
+
+--------------------------------------------------------------------------------
+April 13
+
+Note:
+Eventhough if a person in not the record ownner and if he is present above in the hierarchy that record owner he can share the record to the lower role perosn/lower sub-ordinate 
+
+
+
+--------------------------------------------------------------------------------------------
+April 18:
+Restriction Rules ->  GA WINTER 22  (Data Security) Completely New
+i.e can restrict wahat users can see 
+Enhanced to data security rules 
+Account and Contract(Master and  child) 
+i.e  child(contract) is controlled by parent (Account) -> standard Objects 
+i.e whatever the OWD is set for parent the child OWD is also set asa the same for child -> Standard Objects
+
+Buut custom Objects(MD Relationship OWD for child is Controlled By parent) i.e Can't chnage the OWD for child
+Best paractice to create 1 Restriction rule for 1 Object 
+
+UC #1: Contracts 
+
+CEO & CSO have decided to manage all customer contracts SF. There are various types of contracts. Project level contract, Data privacy contracts , Legal contract, Business partnership contracts….. 
+Ensure business partnership contracts are accessible only by leaders. As an admin how do you implement this. 
+Solution: 
+OWD 
+Sharing rules 
+Role hierarchy 
+Manual sharing  
+Use restriction rules  
+OWD is public read / write – means all users can see all accounts and contracts 
+New Note:
+Account and Contracts are tightly couped unlike Account and Contact opportunirt cases  .So in OWD Account and conract both Owd same anf  for Account and Contact case opportunity (can put independent) 
+Even it is MDR Relationship between account and contract in Schema builder it was showing lookup
+
+N0te: Restriction Rules Limitations->
+
+Considerations: 
+Restriction Rules ->
+Only 2 rules per object  
+Upto 5 rules if you are using unlimited edition 
+Does support only equals condition 
+Supports all custom objects + contracts, tasks, events, time sheet 
+--------------------------------------------------------------
+April 19 Session -Set field History Tracking Chatter Feed
+field History Tracking (We can report it like in atable in History of the Object)
+Chatter Feed(No Report)
+every object has digit prefix(account-001 contact-003)  salesforce has control 
+Custom object did not follow order (random)
+
+Note:
+To track the chanegs who made the chnages in the field in any object in an org-> Field History Trackin and Chatter Feed 
+Enable Field History Tracking and Chatter Feed
+
+Note:Field Tracking Chatter feed history -> -> Max fields(20) to track in Object(20)
+we need to select some fileds not all fileds in object  which we need to track
+We cannnot track RollUp summarise and Fomula fieds for tracking 
+We can query the history of the objet too in query editor(*history)
+We can get history of the objet in reports as well
+
+Note : For need to track the fields in the Object Manager -> Set Field Histoty Tracking Selectfields what you want to select and made the changed the chnages  and see the chnages in Histoy of the Object 
+If no fields  history populated  then track-> Contract History ->  all Object histoty statuses -> Enable 
+NOte On contact History we will see the chnages set to the filed in the object (Track field History)-> You can ees in History of the Object(Chnages)
+Note: On Chatter Enable Feed Tracking and selct some fields (enable upto 20 Limit)  and see the changes in the Right side of the detail page in Chatter feed 
+
+Chatter Features:
+Public 
+Private -create a private chatter groups
+Add users 
+Start with the Collaboration
+
+Unlisted -Create and unlisted chatter group 
+Send invite to users
+Starts with Collaboration
+
+Note:
+We can create a group by setup->Saleforce Chatter->Groups->Give Group NAme and Give Type(Public or Private)  
+Prublic: All members in ORganisation can Access 
+Priveate:Only members in private group can access(Especially used for File Saharing)
+You start posting by using Group EMail allso (in the private group details)
+Private -create a private chatter groups->Add users->Starts with Collaboration
+Unlisted -Create and unlisted chatter group-> Send invite to users-> Starts with Collaboration
+For Broad Cast-> Make Org announcements (Big newses like Your organisnation will combie with anothe rorg and will work sooon like Big Newses )
+--------------------------------------------------------------------------
+April 20 -> Flow 
+
+I----------------------------------------------------
+April 21 (Medium Flow)
+ Enable rub flows if any profile user cannot see the flows in Home Page (When set at Component Visibility)
+ The below NOTE URL LINK must be in the Quick action of the  the blank in the URL Box 
+ 
+ 
+ NOTE URL HACK:  / flow url : /flow/Case_Closure_Email?var_current_case_id={!Case.Id}&retURL={!Case.Id}
+ 
+ 
+ CHECK IN FLOW DETAILS (flow created) :/ flow url : /flow/Case_Closure_Email
+ TAKING INPUT AS CASE ID:var_current_case_id={!Case.Id}
+ RETURN URL :var_current_case_id={!Case.Id}
+ 
+ Note:
+ We can set flow execution order by Trigger Order (If 3 flows run on the Same object )
+ ----------------------------------------------------------------------------------------------
+ April 25-> Session Flows  -> V.Imp 
+---------------------------------------------------------------------
+April 26-> Approval Process Flow na d Code Challenge Explanation
+
+-----------------------------------------------
+April 27->Development Tools
+ 
+------------------------------
+April 28 -development
+
+Notes :
+Database(machine and running softwares)
+Where the data is stored of te objects in Database
+SOSL AND SOQL(Sock-le->Pronounced )
+Genrate all  Contacts ->By Reports(admin)
+SOQL-> a language that helps to communicate with a system database for the retrieve and (sometimes also modification of information from a database)
+Communicate the database with 3 ways-> Developer Console(Query Editor),Vs code , workbench(enable connection to the org and user )
+
+Wjhere can we fin the database of salesforce-> setup -> company information->Instance ->AP 27
+Trust.salesforce.com-> can see the health of the org-> login with username and pwdd of your org
+Dataclassification Settings->Internal public private Confidential Restricted Missioncritical
+We can find the backend data like(System Specific Objects) history of all objects, Email template,Profile,permission set
+Note:
+How to slect all fields in  an Object-> SELECT Fields(All) From Contact limit 10
+
+All standard fields in an object-> SELECT Fields(STANDARD) From Contact limit 10
+
+We can do update in the developer console by Queyring and typing some value and then save the row (not for read only fields)
+
+we can insert and update and delete rows  
+Select id ,name ,firstname,lastname from Contact where Firstname like 'Sirisha';(Contains=like in developer (for System admin like Sys admin ,global process admin ,sales admin ,legal  admin like that )
+
+ID -> Primary Key
+Master detail and lookup relation-> Foreign Key 
+How Workbench and Salesforce communicate d-> Through Api(Survey Settings->Enalble etc..,(To construct workbench ->(/services/data/v54.0/sobjects))
+
+If we want to call those Api from External application how can we communictae -> Base URL should be the Org URL 
+---------------------------------------------------------------
+April 29-> Vscode basics for Queyring
+
+
+Way to communicate with DB 
+-> Hw to find the data center details 
+->AP27-Tokyo, JAPAN DC
+->Data Classification and privacy options 
+->trust.saleforce.com
+
+Vscode Process:
+Install Vs code
+add extension Pack
+top section-> view->Command palette->sfdx:create project  give loacla directory and save
+Next authorise the org and try it logi in by giveing the username and pwd 
+
+Next search for soql query editor 
+and quey what yoy want ->its like worknench only 
+
+SOSL-> FIND (3M) IN ALLFIELDS RETURNING Account(ID, Name)
+returns ID and Names
+
+It will be helpful as a global search 
+
+SOQL RelationShip Query:
+Select ID ,NAME FROM CONTACT->simple
+SELECT  id ,contact.Account.AccountName-> get all id, Accout names associated with the Contact 
+
+ 
+Note :
+2 objets relate (From child you can Access Parent like )-> (Contact.AccountName)
+Multipe level:
+contact.Account.CreatedBy.ProfileName 
+We can traverse multiple levels(for(.)) 
+Use dot(.) operator for query i.e By dot operator we can query  the child to parent query 
+
+-----------------------------------------------------------------------
+May 2 -> Session Development
+
+Quiz->
+1. Limit-> Keyword used to restrict the number of recors while retrieving
+2.Select id from Account where (Select Id,Name ,Firstname,Lastname from Contact where FirstName='Sirisha';)("For strings ,characters,dates fields enclosed between single quotes rest other no single quotes ")
+3.How to query the leada having type Elite Or Regular->> (Select Name from Lead Where type in('Elite', 'Regular');)
+Eg:Where lastname='siri' or 'Rani' ->>>where lastname in ('Siri','rani')
+4.How do you traverse (Child to Parent -> Dot operator(.))
+5.Which database feature in salesforce supports Database feature-> SOSL
+
+Data Relationship Queries ->   
+
+
+Notes:
+1.Child to Parent--> Accessing Parent fields from the Child Object 
+( Objectsinvolved-> child and parent->> Standard  ) -> Use Dot operator
+Select Id ,Name ,Contact.Account.Name  from Contact 
+
+ 
+2.child to parent --> Accessing Parent fields from the Child 
+(Objects involved->Child and parent-> Mixed ->Standard and Custom)-> Use dot and  (__r ) operator when accessing parent fields )
+Select id ,name,Account_Name__r.Name from Legal_Review_Request__c 
+-------------
+Parent to child Querie(Standard)
+1.Parent to Child->
+ Objects involved ->Standard-> 
+ Eg:1 (Select Id,Name,(Select Id,Name from Contact) from Accounts)(Sub query)
+ Eg:2 -> SELECT Name, Account.Owner.FirstName, Account.Owner.Profile.Name ,Account.Owner.Profile.CreatedBy.FirstName,(SELECT Contact.Name FROM Account.Contacts) FROM Account
+
+2. Parent to child ->Standard and Custom-> Need to use Child Relationship Api name  instead of Api Name when Custom object 
+(Objects involved-> Standard and Custom )
+
+Select id ,Name,(Select id ,Name  from  Legal_Review_Request_r(Child relationship name ) from Account)
+
+
+Setup-> Optimiser ->Allow Access->Monthly run or run at any time-> whatever is not using they can appear at optimiser
+----------------------------------------------------
+May 3-> Classes Objects Variables
+-----------------------------------------------------------------------MAy 4 Session -> 
+One must know bout Apex Governor Limits 
+DML STatements within 1 execution-> 1 out og 150 
+
+Anonymous IWndow   ->  
+
+
+Account objAccount=new Account();//step1 Initialise
+objAccount.Name='MyFirstAccountfrom Dev Console';
+objAccount.AnnualRevenue=100000;
+objAccount.AccountNumber='1';
+insert objAccount;
+
+Account objAccount=new Account();//step1 Initialise
+objAccount.Name='MySecondAccountfrom Dev Console';
+objAccount.AnnualRevenue=200000;
+objAccount.AccountNumber='2';
+insert objAccount;
+
+If we want  to insert 1000or more records use List in Apex 
+
+U can write teh same code in the  Classes
+
+class://method without parameters//
+public class HelperUtil {
+public void CreateAccount(){
+Account objAccount=new Account();//step1 Initialise
+objAccount.Name='Inside CreateAccountMaethod Acc';
+objAccount.AnnualRevenue=100000;
+objAccount.AccountNumber='1';
+insert objAccount;
+}
+}
+
+Anonymous Window code to run class/call method:
+
+HelperUtil objHelperUtil=new HelperUtil();
+objHelperUtil.CreateAccount();
+-------------------
+/*Method with Parameters*\
+
+public class HelperUtil {
+ 
+//method with parametersAccount objAccount=new Account();//step1 Initialise
+public void CreateAccountWithParameters(String strAccountName,String strAccountNumber){
+Account objAccount=new Account();
+objAccount.Name=strAccountName;
+objAccount.AccountNumber=strAccountNumber;
+Database.insert(objAccount);
+}
+}
+
+Anonymous Block code:
+HelperUtil objHelperUtil=new HelperUtil();
+objHelperUtil.CreateAccountwithparameters('Accountwithaparameters','2');
+
+-------------------------------------------------------------
+//List Map Set
+List-> allow s dupicates and Indesxed
+set->Not allowed duplicated and Not indesxed and unique elements
+
+public class HelperUtil {    
+// usage of for loop in apex
+public static void CreateMultipleAccount(Integer iNoofAccounts){
+for(Integer i=1;i<=iNoOfAccounts;i++){
+Account objAccount=new Account();
+objAccount.Name='Account Created from for For loop'+i;
+objAccount.AccountNumber='AccNo'+i;
+Database.insert(objAccount);
+}
+}    
+    
+}
+
+Anonymous Code:
+HelperUtil.CreateMultipleAccount(2);
+
+There is no dedicated server for all Orgs it was a multitenant Architecture . Salesforce Even though it has different org is salaeforce will take care.
+------------------------------------------------------------------------------------------------------
+MAy 5-> No session
+----------------------------------------------
+May 6 -> Session List Set  Map
+
+Saleforce ->Oops Principles
+
+Data Manipulation Lanaguage-> Insert Update Delete
+
+
+Account sobjAccount=new account();
+sobjAccount.Name='Sirisha Account';
+sobjAccount.AnnualRevenue=20000;
+sobjAccount.AccountNumber='12345';
+insert objAccount;
+
+//Governor Limits: 1 out of 150 records in DML 
+
+To not create an object use Static Keyowrd at the time of declaring a metod in a class
+-----------------
+//method to create accountand contact at atime
+
+public class HelperUtil {
+//how to create an contact related to the Account
+public static void CreateconwithAcc(String strAccName,String strAccNo,string strConlastName){
+Account objAccount=new Account();
+objAccount.Name=strAccName;
+objAccount.AccountNumber=strAccNo;
+Database.insert(objAccount);
+system.debug('Value of objAccount' +objaccount);
+system.debug('Accountid that was created' +objaccount.id);    
+
+    
+Contact objcontact=new Contact();
+objcontact.LastName=strConlastName;
+objcontact.AccountId=objaccount.Id;
+system.debug('Value of objContact' +objcontact);
+system.debug('Contactid that was created' +objcontact.id);  
+insert objcontact;
+ 
+}
+}    
+Anonymous code:
+HelperUtil.CreateconwithAcc('CrreatinAcc','234','Accountrelatedcontact');
+-----------------------------------------------------------------
+//// create con related to Account
+
+public static void CreateconreltoAcc(Id AccountId,string strConlastName){
+Contact objcontact=new Contact();
+objcontact.LastName=strConlastName;
+objcontact.AccountId=AccountId;
+system.debug('Value of objContact' +objcontact);
+system.debug('Contact id that was created' +objcontact.id); 
+system.debug('Contact was created' +objcontact.lastName); 
+insert objcontact;
+ 
+} 
+
+Anonymous code:  
+HelperUtil.CreateconreltoAcc('0015j00000eTWacAAG','Accountrelatedcontact2');
+----------------------------------------------------------------------------------------------
+//list index always start with Index 0
+//list allows duplicates and similar structure of Array
+
+//set not allows duplicates
+//set is not indexed
+
+------------------------
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------
+MAy 7->
+
+quiz:
+1.how to create instance of Account: Account acc= new account();
+2.Not acollection ->decimal
+3.Which collection donto contain Duplicates->Set Even Map allows Duplicates-
+4.Map is use to collect KeyValue paired Collection
+5.Corect way to loop case-> for(Case oCase:CasesRecords){//}
+
+Note:
+System LimitException  -> Too many DML STatements error->Governor Limits->  supports only 150 DML  -> (Database.insert(objAccount))
+use plain statetements to deal with lessno of records
+use list or set or map to deal with 100 or hundreds of recordsuse Batch Apex to deal with millions of records 
+
+How do you whether CPU  time limit exceed the limt or not in Salesforce-> Unit testing(test class)
+Erro handling and limit exception are more imp and can need to be set
+ Put asn =: when passing any parameter inside query i.e input value at run time execution 
+ 
+ public class HelperUtil{
+ public static void RunallConAnotherusageofForLoop(){
+ List <Contact> conlist=[select Id,Name from Contact];
+System.debug('total contacts in the list'+conlist.size());
+System.debug('values of the  contacts in the list'+conlist);   
+//looping data from the collection version2
+    for(contact con:conlist){
+      System.debug('contact name'+con.name);
+       system.debug('contact id'+con.id);
+       System.debug('Account id'+con.accountid); 
+  
+    }    
+}
+
+--------
+Anonymous code:
+HelperUtil.RunallConAnotherusageofForLoop();
+ 
+ }
+ 
+-----------------------------------------------------------------------------------------------------
+May 10-> Session 
+
+//find duplicate records if not a duplicate insert lead if duplicate throw error
+  
+ public class HelperUtil{
+  public static void duprecordCheck(string strleademail,string strlastname,string strcompanyname){
+ List<lead> leadlist=[select id,lastname,email from lead where email =:strleademail];
+            system.debug('lead list size'+leadlist.size());
+        
+        if(leadlist.size() > 0)
+        system.debug('already ead exists');
+           
+        
+//else insert lead
+        else{
+            system.debug('no lead exists with give email you can insert lead');
+            lead objlead=new lead();
+            objlead.email=strleademail;
+            objlead.lastname=strlastname;
+            objlead.company=strcompanyname;
+            insert objlead;
+        }   
+ }
+ }
+ 
+ Anonymous code:
+ HelperUtil.duprecordCheck();
+ ---------------------------------------------------------------------
+public class HelperUtil{
+//puja question  //Simple method which will not return anything
+ public static void  accountByState_simple(string state)   
+ {
+  List<account> acclist=[select id,name from account where billingstate=:state];
+    //system.debug('state is'+acclist ) ; 
+    
+ } 
+//advanced method    
+ public static List<account>  accountByState(string state)   
+ {
+  List<account> acclist=[select id,name from account where billingstate=:state];
+   return acclist;
+     
+ } 
+}
+
+Anonymous code:
+List<Account> accoutput=HelperUtil.accountByState();
+System.debug('accoutput' +accoutput);
+-------------------------------------------------
+Note : When Deal with strings use like operator while querying just  a suggestion
+select id,name from account where billingstate like:state
+
+-------------
+public class HelperUtil(){
+public class Getdays(){
+string[] weekdays=new list<string>();
+weekdays.add('apple');
+weekdays.add('apple');
+System.debug('weekdays' +weekdays);
+}}
+-----------------------------------------------------
+Handful of records-> simple create account
+Hunders or thousands of records, Max SOQL-50K,DMLStatements(10k)->List or set or Map
+Millions of records-> Batch Apex  
+
+Batch Apex->
+
+public class AccountEnagagementBatch implements Database.Batchable<sobject>{
+    //collects all data to be processed 
+    public  Database.QueryLocator start(Database.BatchableContext Bc)
+    {
+        //collect all the data to be processed 
+        String query= 'Select id,name from Account';
+        return Database.getquerylocator(query);
+        
+    }
+    public void execute(Database.batchablecontext bc, list<account> acclist){
+       //process each batch of records being sent by start() method 
+        for(Account acc:acclist){
+            system.debug('Account name is'+acc.Name);
+        }
+    
+    
+    }
+    public void finish(Database.batchablecontext bc){
+        //it can use this method to send completion email to admins or developers
+        //It can use this method to log any error
+        
+    }
+}
+
+
+Anonymous Block:
+AccountEnagagementBatch oBatch=new AccountEnagagementBatch();
+//2nd paramter determines how may rcords should be processed in each batch
+Database.executeBatch(Obatch,20);
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+May11->SchdeuleBatch ApexQuiz
+
+Quiz:
+1.Class->Blue Print
+2.Variable in Apex->Container or storage to store values
+3.rght way to define string variable in Apex->String name='Apex programming';
+4.Is an example of primitive datatype->Integer
+5.how do you get the curent id of the record->recordId
+
+Batch apex is a super class and has 3 methods Start Execute Finish 
+
+start method will transfer the collected  records  to execute method i.e 1st set of chunk of records therefore the next chunk will getread to excute as like 1st chunk passed by the starte methods
+
+
+Use Apex Sync options -> Schdeulable Apex,Queueable Apex,Batch Apex,
+How schdeule  Batch Apex-> Ctrate a Schdeule Apex class and  in that run include the Batch apex
+
+How to schedule Apex->  Apex classe click the Schedule  apex Button and -> Give that clas indiactor like name give evry (monday or any day) and give time(start and end) and occurs at preferred time like 6:00 pm etc..,) 
+ 
+ Schdeulable Apex will run periodically (like monday or sunday etc.. at certain time)
+  If a batch is scheduled we cannotedit the schdeule apex we need to remove and then edit 
+ 
+AccountEnagagementWeeklyBatch
+
+Schdelue batch example:
+1st way: AccountEnagagement Batch schduled in another class AccountEnagagementweekly batch
+
+Batch class:
+
+public class AccountEnagagementBatch implements Database.Batchable<sobject>{
+    //collects all data to be processed 
+    public  Database.QueryLocator start(Database.BatchableContext Bc)
+    {
+        //collect all the data to be processed 
+        String query= 'Select id,name from Account';
+        return Database.getquerylocator(query);
+        
+    }
+    public void execute(Database.batchablecontext bc, list<account> acclist){
+       //process each batch of records being sent by start() method 
+        for(Account acc:acclist){
+            system.debug('Account name is'+acc.Name);
+        }
+    
+    
+    }
+    public void finish(Database.batchablecontext bc){
+        //it can use this method to send completion email to admins or developers
+        //It can use this method to log any error
+          
+        
+    }
+}
+
+Schedule Class:
+public class AccountEnagagementWeeklyBatch implements Schedulable {
+
+    
+    Public void execute(System.SchedulableContext Sc)
+    {
+    AccountEnagagementBatch oBatch = new  AccountEnagagementBatch();
+    Database.executeBatch(oBatch,10);
+        
+    }
+}
+---------------------------------------------------------------------
+2nd way->include schedule keyword  
+
+Same class-> batch and schedule
+public class AccountEnagagementBatch implements Database.Batchable<sobject>,Schedulable{
+    //collects all data to be processed 
+    public  Database.QueryLocator start(Database.BatchableContext Bc)
+    {
+        //collect all the data to be processed 
+        String query= 'Select id,name from Account';
+        return Database.getquerylocator(query);
+        
+    }
+    public void execute(Database.batchablecontext bc, list<account> acclist){
+       //process each batch of records being sent by start() method 
+        for(Account acc:acclist){
+            system.debug('Account name is'+acc.Name);
+        }
+    
+    
+    }
+    public void finish(Database.batchablecontext bc){
+        //it can use this method to send completion email to admins or developers
+        //It can use this method to log any error
+          
+        
+    }
+     Public void execute(System.SchedulableContext Sc)
+    {
+    AccountEnagagementBatch oBatch = new  AccountEnagagementBatch();
+    Database.executeBatch(oBatch,10);
+       
+        
+    }
+    
+    
+}
+
+-----------------------------------------------------------------------
+Database.insert->(ALL OR NOTHING )OR you have the option to choose either (ALL OR NOTHING) OR Partial Success 
+while inserting insert all records if some records fail also
+Insert->Donot insert if any of the records will fail 
+-------------------
+public class HelperUtil{
+public static  void InsertVsDBInsert()
+ {
+List<Contract> lstcontract=new List<Contract>();
+Contract objcontract1=new Contract();
+objcontract1.AccountId = '0015j00000epGH5AAM';
+DateTime  dt = system.now();
+Datetime currDate=date.newInstance(dt.year(),dt.month(),dt.day());
+//objcontract1.StartDate = currDate;
+objcontract1.ContracTterm = 6;
+objcontract1.status='draft';
+lstcontract.add(objcontract1);
+
+Contract objcontract2=new Contract();     
+objcontract2.AccountId = '0015j00000epGH5AAM';
+//objcontract1.StartDate = currDate;
+objcontract2.ContracTterm = 6;
+objcontract2.status='draft-In progress';
+lstcontract.add(objcontract2);
+
+Contract objcontract3=new Contract();     
+objcontract3.AccountId = '0015j00000epGH5AAM';
+//objcontract1.StartDate = currDate;
+objcontract3.ContracTterm = 6;    
+lstcontract.add(objcontract3);
+//How to fix issue insert use databae.insert
+ //use Database.Insert(lstcontract,false);
+Database.Insert(lstcontract,false);
+ for(Database.Saveresult result :resultlst){
+         if(result.IsSuccess()){
+        System.debug('Succesfully processed records'+result.Id); 
+            }
+         else{
+          System.debug('error got while  processed records'+result.Id);    
+         }
+     
+ for(Database.Error err: result.getErrors())
+         {
+             System.debug('Some error got some records not processed ' +err.getMessage());
+              System.debug('error fields are' +err.getfields());
+             
+         }
+     }
+ 
+
+    
+ }   
+}
+Anonymous code:
+//dbInsertis false the records will get inserted half
+HelperUtil.InsertVsDBInsert();
+------------------------------------------
+May 12 and 13 ->Session
+
+how to store the error record info
+
+Approach 1: Create a custom object to store the errors or the records that are not processed
+Approach2 :sendingEmail message-> search with send email in apex with code  
+ public static  void InsertVsDBInsert()
+ {
+List<Contract> lstcontract=new List<Contract>();
+Contract objcontract1=new Contract();
+objcontract1.AccountId = '0015j00000epGH5AAM';
+DateTime  dt = system.now();
+Datetime currDate=date.newInstance(dt.year(),dt.month(),dt.day());
+//objcontract1.StartDate = currDate;
+objcontract1.ContracTterm = 6;
+objcontract1.status='draft';
+lstcontract.add(objcontract1);
+
+Contract objcontract2=new Contract();     
+objcontract2.AccountId = '0015j00000epGH5AAM';
+//objcontract1.StartDate = currDate;
+objcontract2.ContracTterm = 6;
+objcontract2.status='draft-In progress';
+lstcontract.add(objcontract2);
+
+Contract objcontract3=new Contract();     
+objcontract3.AccountId = '0015j00000epGH5AAM';
+//objcontract1.StartDate = currDate;
+objcontract3.ContracTterm = 6;    
+lstcontract.add(objcontract3);
+//How to fix issue insert use databae.insert
+ //use Database.Insert(lstcontract,false);
+Database.Insert(lstcontract,false);
+ for(Database.Saveresult result :resultlst){
+         if(result.IsSuccess()){
+        System.debug('Succesfully processed records'+result.Id); 
+            }
+         else{
+          System.debug('error got while  processed records'+result.Id);    
+   //Approach 1 to strore the errors getting  while the rrecords processed       }
+ list<Org_error__c> ObjErrors= new List<Org_error__c>();
+         
+ for(Database.Error err: result.getErrors())
+         {
+             System.debug('Some error got some records not processed ' +err.getMessage());
+              System.debug('error fields are' +err.getfields());
+           Org_error__c orger= new  Org_error__c();
+           orger.Error_Message__c =err.getMessage();
+           orger.Error_origin__c='Helper Util>>>> InserVsDbMethod';
+           orger.Error_Date_Time__c =datetime.now();
+           ObjErrors.add(orger);
+             
+         }
+         if(ObjErrors!=null){
+             database.insert(ObjErrors);
+         }
+     }
+	 
+	 }
+ 
+Anonymous Block:
+//new error records will created in org error object
+helperutil.InserVsDbMethod();
+------------------------------
+
+Flow-> will run-> batch ,schdule flow -> Asynchronous mode otherwise flows will run in synchronous mode
+
+Triggers->
+
+Befor trigger and After trigger
+Before trigger:
+It perform like  trigger calls method in a class and proces all records tat just chnaged
+
+It will validate the data,Compare old data in records before they committed to database.
+Next Data committed to Database.
+
+After trigger:
+data is committed to database
+it will also the method in a class
+It will do the stuff like create related records or perform SOQL using the IDS of the records that just got created 
+
+Trigger Events(7)->before Insert,before Update,before Delete,
+After Insert,after Update,AfterDelete,Ater undelete
+
+Usecase:Stop creation of lead if duplicate email address is present
+
+Trigger LeadTriggerController on Lead(before Insert){
+
+}
+
+
+//trigger,new is used to deal with the newly saved record data 
+//trigger .old deals with the old saved record data 
+
+1 trigger per object ->good and must need to follow the principle Implement any of your logic on the same trigger by using context variables
+
+------------------------------------------------
+LeadTriggerController ->Apex trigger 
+
+
+
+trigger LeadTriggerController on Lead (before insert,before update,after insert,after update) {
+system.debug('Iam being called from lead trigger');
+    if(trigger.isbefore)//context var help to control code to be executed and when
+    {
+        if(trigger.isInsert){
+            system.debug('iam being called from before insert');
+        } 
+    }
+    system.debug('value of trigger is' +trigger.new);
+    system.debug('Value of trigger is ' +trigger.old);
+//code to implement no dup records will create 
+    for(lead olead:trigger.new){
+        list<lead> lstlead =[select id from lead where email=:olead.email] ;
+        System.debug('lead email' +olead.email);
+    if(lstlead.size()>0)
+       {
+        olead.adderror('cannot create a new lead as there is an lead already exists with the same email') ; 
+       }
+    }
+
+}
+--------------------------------------------
+Eg: Apex+trigger
+--------------------------------------------
+Apex class:AccountTriggerController
+--------------------------------------------
+public class AccountTriggerController {
+    //method to to check any contact present related to account 
+    public static boolean Iscontactexists(id iaccountid){
+        List<contact>conlist=[select id,name,email,Accountid,account.name from contact where accountid=:iaccountid ];
+        if(conlist.size() > 0){
+            return true;
+        }
+      
+        return false;
+        
+    }
+      //method to to check any opportnity  present related to account 
+    public static boolean IsOpportunityexists(id iaccountid){
+        List<Opportunity>opplist=[select id,name,Accountid,account.name from Opportunity where accountid=:iaccountid];
+        if(opplist.size() > 0){
+            return true;
+        }
+        return false;
+        
+    } 
+    ////use case- update the contacts mailing countryaddres as acccount billing address
+   public static void UpdateallcontactMailingcountry(id iaccountid,string strbillingcountry){
+        List<contact>conlist=[select id,name,email,Accountid,account.name,MailingCountry from contact where accountid=:iaccountid ];
+        if(conlist.size() > 0){
+            for(contact con:conlist){   
+            con.MailingCountry=strbillingcountry;
+            }
+            Database.update(conlist,false);//Instruct the city to update the mailing city
+           
+        }
+           
+    } 
+    
+    
+}
+---------------
+Apex Trigger:
+-------------------------------------------------
+AccountTrigger
+-------------------------------------------------
+
+trigger AccountTrigger on Account (before insert,before update,after insert, after update,before delete) {
+//use context variable to  drive yor logic
+    if(trigger.isBefore && trigger.isdelete){
+       //catch the old date by trigger.old y so we are dealing with old data
+       //
+       // // use case ->Stop deleting the account if releted contacts or opportunities are present related to account
+        system.debug('checking data' +trigger.old);
+        system.debug('checking data' +trigger.new);
+For(account acc:trigger.old){
+         Boolean breldataexists=AccountTriggerController.Iscontactexists(acc.id);
+        if(breldataexists)
+        {
+          acc.addError('Acccount cannot be deleted account has associated contacts');
+            
+     
+        }
+  
+    }
+    }
+}
+---------------------------------------------------------------------------------------
+try catch block
+
+
+public class AccountTriggerController {
+   
+    ////use case- update the contacts mailing countryaddres as acccount billing address
+   public static void UpdateallcontactMailingcountry(id iaccountid,string strbillingcountry){
+       try{
+          List<contact>conlist=[select id,name,email,Accountid,account.name,MailingCountry from contact where accountid=:iaccountid ];
+        if(conlist.size() > 0){
+            for(contact con:conlist){   
+            con.MailingCountry=strbillingcountry;
+            }
+            Database.update(conlist,false);//Instruct the city to update the mailing city
+           
+        }  
+       }
+       Catch(Exception ex)
+       {//collect errros
+           //later you can send email to developer with errror message
+           //OR Use custim error object to colect all the erroes 
+          list<Org_error__c> ObjErrors= new List<Org_error__c>();
+          
+           Org_error__c orger= new  Org_error__c();
+           orger.Error_Message__c =ex.getMessage();
+           orger.Error_origin__c='AccountTriggerController Util>>>> UpdateallcontactMailingcountry';
+           orger.Error_Date_Time__c =datetime.now();
+           insert orger;
+             
+         
+         
+       }
+       
+           
+    } 
+    
+    
+}
+
+-----------------------
+--------------------------------
+//eg for apex trigger+Apex class
+------------------------
+trigger AccountTrigger on Account (before insert,before update,after insert, after update,before delete) {
+
+     //use case- update the contacts mailing addres as acccount billing address
+    if(trigger.isafter && trigger.isupdate){
+   
+        system.debug('checking acc new  data' +trigger.new);
+        for(account acc:trigger.new){
+           //offload logic to another class 
+AccountTriggerController.UpdateallcontactMailingcountry(acc.id, acc.billingcountry);      
+        }
+        
+}
+}
+---------------------------------------
+May 16>
+
+Trigger ->Min codepercentage->1%
+Apex Class->Min code->75%
+
+1.aysnchronous apex is a Piece of Code that executed in the Background -Higher governor limits-50 million records synchronous ->will wait for the process to complete
+2.Interface used to make a class batchabel-> database.batchable<sobject>
+3.normal class to become schedulable -> global<className>implements schdeulable
+4.What sis used to implement a trigger or class to delete 10000 records->batchabel Class
+
+Trigger->before ->insert update delete
+ trigger.old->old record data 
+ trigger.new->existing data
+ 
+ 
+Usecase:You have been asked to cannot delete account if any of the contact or opportunity existed related to Account if not delete Account
+
+trigger AccountTrigger on Account (before insert,before update,after insert, after update,before delete) {
+//use context variable to  drive yor logic
+    if(trigger.isBefore && trigger.isdelete){
+       //catch the old date by trigger.old y so we are dealing with old data
+       //
+       // // use case ->Stop deleting the account if releted contacts or opportunities are present related to account
+        system.debug('checking data' +trigger.old);
+        system.debug('checking data' +trigger.new);
+For(account acc:trigger.old){
+         Boolean breldataexists=AccountTriggerController.Iscontactexists(acc.id);
+        if(breldataexists)
+        {
+          acc.addError('Acccount cannot be deleted account has associated contacts');
+            
+     
+        }
+  
+    }
+    }
+}
+-----------------------------------------------
+May 17->Session
+
+Unit testing->test done by developers  to run 
+Apex class->75% Apex Trigger->Min 1%
+
+based on lines of code covered in Apex Classes-> total  lines(100) codes covere#unit testing(80lines) ->code coverage -80%
+
+Apex trigger+Apex class
+Use case:create an new  contact for new Account is created
+Account trigger controller->Apex class
+
+public class AccounttriggerContrller{
+Public static void insertConatct(id AccountId)
+{
+
+}
+}
+
+
+
+-----------------------
+Account trigger:
+trigger Accounttrigger on Account(after insert){
+if(trigger.isInsert){
+for(Account oAcc:trigger.new){
+AccountTriggerController.CreateNewContact(OAcc.Id);
+}
+}
+}
+------------------------------------------
+
+public class AccounttriggerContrller{
+ //createcontact method
+    public static void CreateNewContact(id OAccountid){
+try{
+contact con=new contact();
+con.AccountId =OAccountid;
+con.lastName='default contact' +OAccountid;
+insert con;
+}
+ Catch(Exception ex)
+       {//collect errros
+           //later you can send email to developer with errror message
+           //OR Use custim error object to colect all the erroes 
+          list<Org_error__c> ObjErrors= new List<Org_error__c>();
+          
+           Org_error__c orger= new  Org_error__c();
+           orger.Error_Message__c =ex.getMessage();
+           orger.Error_origin__c='AccountTriggerController Util>>>> CreateNewContact';
+           orger.Error_Date_Time__c =datetime.now();
+           insert orger;
+         
+       }
+    
+    }
+
+
+}
+
+------------------------------------------------
+Test class-AccounttriggerControllerTest
+
+@isTest
+public class accounttriggerControllerTest{
+@isTest
+public static void AccountafterinsertTrigger_createnewcontacttest(){
+//create new accnt instance
+account oAcc=new Account();
+occ.name='testaccnt';
+test.starttest();
+insert oAcc;
+system.debug('accnt id of trigger test new accnt is +OAcc.id);
+test.stoptest();
+list<Contact> lstcontact =[select id from contact ];
+Integer noOfContacts=lstcontact.size();
+system.debug('noOfContactcreate' +noOfContacts);
+system.assertequals(1,noOfContacts,'expected and  actual are different atleast one contact gets created');
+}
+}
+-------------------------------------------------------------------
+May18->
+
+window.open(link)-forgot your passsword link expires 24 hrs-window.open(link)(use it)
+not able to login to your sf org-> create user with sys admin profile and use it it will work
+
+quiz:
+1.@isTest->Annotation used to to define a class is an unit test class
+2.Below Option used to invoke start of the test in the uit testing code->test.starttest();
+3.annotation used to define test method->@istest
+4.Min apex class overall code percentage->75%
+5.Min ApexTrigger code coverage->1%
+
+static resource->used to load the images etc and data
+
+LWC:We can't create lwc component in dev console
+Shift from Org based devlopment to Source based development
+
+Scartch Org->Disposable Org->30 days life time
+
+-------------------------------
+MAy19 ->Session
+
+Mothership(dev org->general trailhead org ) relate to scratch Org
+Enable devhub an denable source tracking
+
+create a project :1 sfdx 2.vscode
+vscode->create project with manifest(cntrl+shft+P)
+sfdx:project:create -help->get all commands we canuse in vscode
+
+sfdx:project:create -n new project->creating a project
+
+C:\Users\gudla\Desktop\USING PRM\VS CODE PRJCTS>sfdx force:auth:Web:login -a Mindfuldevhub -d   ->Authorise to devhub(Devloper) org
+
+
+C:\Users\gudla\Desktop\USING PRM\VS CODE PRJCTS>sfdx force:org:create -a scratchorgnamegiven -d 30 --type=scratch  ->creation of scractch org
+
+
+sfdx force:org:create -a scratchorgnamegiven -d 30 --type=scratch --targetdevhubusername=Mindfuldevhub -f config\project-scratch-def.json
+->creation of scratch org from mother dev  org
+
+sfdx force:org:open -u scratchorgnamegiven->opening a scratch org
+
+Insted of force use auth  (sometimes benfit)
+sfdx --help(get commands and tool helps)
+-------------------------------------------------------------------
+May 20->
+
+Quiz:
+1.Scratch org is -->disposable org meant for devlopment and testing
+2.maximum life span of scratch irg is ->30 days
+3.preferred code editor for SF App developer->Vscode
+4.whic feature should be turned on in order to create and manage the scratch orgs-> ENable devhub
+5.2 ways related to ctreate Salesforec related Project->Salesforce CLI & VSCode
+
+Commands:
+sfdx force:org:list->List of all Orgs(aliasname usernmae orgid expiry date createddate)
+
+ sfdx force:org:open -u test-m0viv8tgwztr@example.com 
+->used to chnage the scratch org name
+
+sfdx force:push -u MinddevHuborg  >Move the code of the local project to the org you want to move
+
+sfdx force:pull -u MinddevHuborg ->Move the code from org to the local project in Vs code
+
+Suppose a fied is  deleted in org and present in local project (vscode) is present then you can use the sfdx: pull/push to default scratch org and override conflicts(legacy) i.e  orgcomponents=vscodecomponents
+
+--------------------------------------------
+May 23->
+1.sfdx commands used to  move code  from local project to devhub org and vice versa->true
+2.command used to check chnages between local SF Project and  the Scratch org:sfdx force:source:status(i.e not present in local project and present in org)
+3. command used to move code from local to scratc->sfdx force:push u org name
+4.can we bring the changes in the scratc org to the sf project ->yes 
+ 5.Command used to get the scratch org data in to the sf project->sfdx force:pull
+ 
+Whatever youpull into Vscode from org->Metadata(simply backend data about the component)
+
+usage of pull ->to pull the metadata from org to the vs code project
+
+LWC:FUNDAMENTALS
+->HTML
+->JAVASCRIPT
+->XML
+
+Browser understands cerain languages ->javascript HTML CSS
+javacript(background action)->powerful->one must need to learn
+Right Click ->Inspect
+--------------------------------------------
+May 24  Session->LWC
+
+Every browser uses Engines (Eg firefox used smartmonkey)
+javascript hav so many frameworks
+Framework(lot of code is reduced to less no of lines of code )
+
+HTML file can be able to understand by the Browser
+
+Html code:
+<html>
+    <head>
+        <title>1st HTML</title>
+        <link href="samplecss.css"rel="stylesheet">
+        <script src="javascript.js"></script>
+        <body>
+          Welcome to Learning
+            <img src="https://th.bing.com/th/id/OIP.G8EvxQnKZ_LMVJ6OVIOxdQHaEo?pid=ImgDet&rs=1" alt="BeautifuCar" class="imgsize">
+<button type="button" onclick="opennewsportal()">Top News!</button>
+        </body>
+    </head>
+    </html>
+Arrow functions	
+May 24->Vs code project-> Dev training->javacript.js samplehtml.hyml
+-------------------------------------------------------------------
+May 25 Session 
+
+Html js 
+------------------------------------------------------------------------------------
+<template>
+    <lightning-card title={titleMsg}>
+   <div class="slds-m-left_medium">
+       <img class="'imgsize" src="https://th.bing.com/th/id/OIP.5kxasAx09PcpBXxywTpsqAHaEo?pid=ImgDet&rs=1">
+   <p class="textTransform">Car</p>
+
+   <lightning-button variant="success" title="Click-Me" onclick={handleNewButtonClick}></lightning-button>
+    </div> 
+    </lightning-card>
+</template>
+-------------------import { LightningElement } from 'lwc';
+
+export default class TryOuts extends LightningElement {
+titleMsg='Learning Lwc';
+handleNewButtonClick(){
+    alert('Inside Handle cllick function ');
+}
+
+
+
+}
+---------------
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <isExposed>false</isExposed>
+</LightningComponentBundle>
+-------------------
+.imgsize{
+    padding:8px;
+    background-color:aqua;
+    height:120px;
+    max-width:initial;
+
+}
+.texttransform{
+    font-weight:bold;
+    text-transform: uppercase;
+}
+
+--------------------------------------------------
+//js
+
+
+//json format
+quote={
+imgsrc:"imgstoredlink.jpg",
+authorname: "Benjaman",
+quoteTopic:"Women"
+};
+------
+<img src={quote.jpg}>
+<p {authorname}</p>
+----------------------------------
+Components Communication: 
+
+Sending data from Parent component to Child Component: 
+Step 1: In child component, Expose a property and prefix it with @api 
+
+Step 2: In Parent component, use the @api property as attribute and send the data 
+
+@wire is used to use the Apexclass inside any js i.e to call the class method
+
+
+If you want loop through each element in lwc use for loop and iterator 
+Sntx: <template for:each=[quotes} for:item="quoteItem">
+
+<div key={quoteitem.id}>
+</div>
+</template>
+-----------------------------------
+MAy-3 Quiz
+
+1.Default namespace for Custom Components->c(child componnet name in kebab casing)
+2.Special Html directive in Lwc->Special Html attribute that adds dynamic behaviour to an HTML Template
+3.conditional renderig attribute: <div if:false={someproperty}></div>
+4.Html looping directive=<div for:each={quotes}foritem="quoteitem" key={uniqueId}></div>
+5.key directive is importnat when  used for loop directives ->lwc engine use the key directive to detrmine which items have changed
+------------------------------
+May 6->
+
+all topics button new button in QuoteDetailController
+Use lightening design system->
+---------------
+when we import any method in js give @Auraenable(cacheable=true) in class and  the in the js expose ,wire and 
+ give @wire(fetchQuoteTopics)
+    getoutput({data,error}){
+    if(data){
+        this.option=data;
+    }
+    else if(error){
+        console.log('Something went wrong!' +error.body.message);
+    }
+};
+
+--------------------------------
+May 7
+
+Quiz:
+1.How does a child componnest recives dat from parent componnet-> @api
+Note:Here child component recieves the data from Parent 
+
+expose api in the lwc child component, @apiQuotedetai in Child compo, Next in Parent componet in Html use<c-chil-quote-detail > (kebab case the child result)
+
+Eg in our project: Child Component  -> QuoteTile
+Parent component ->quoteSearchresult
+
+
+2.<c-todo-item item-name="Milk"> </c-todo-item item-name="Milk"> Identify the public property exposed by the chilld component   --->item name as an attribute(@Milk)
+
+3.How does a parent component recieve the data from the child component->By exposing  events 
+ 
+4.<template for:each={contacts} for:item="contact"><ui><li>{contact.Name},{contact.Title}</li></ui>
+</template>--->find out the error ->.<template for:each={contacts} for:item={contact.Id}>(Missing attribute key attribute {contact.Id}
+
+5.<template>
+<c-setup-topic title="child Component">
+</c-setup-topic>
+</template>
+How can we access chid elemnt in Js controller?
+
+Ans:this.template.querySelector{c-setup-topic}
+
+
+Redirection:use navigation mixin to redirect the new screen  or internal or external navigation 
+-----------------------
+May 9:
+Quiz
+1.How do you import an apex Method into LWC  js Controller
+ ->import methodName from 
+ '@salesforce/schema/className.ApexMethodName';
+ 
+2.Which decorator is used to import @wire data servie->@wire
+3.
+How do you annotate an Apex method  for invoking via LWC wire data service->@AuraEnabled(Cacheable=true)
+
+4.How do you invoke a private static method from lwc wire data service->Not possible .it should be global or public
+
+5. which is the corrct syntax for making a call with apex method and storng data back-> @wire(ApexMethodName)propertytoholdata;
+ 
+ lms->irrespective of relationshipand  whether thery are presetn on the same page lms is used (bright future like flow)
+ 
+if 2 or more components are present in the same page and they are are not re;atwd to each other we can use pub sub model 
+ 
+ 
+ 
